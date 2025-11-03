@@ -1,6 +1,6 @@
 package a.basic;
 
-public class Practice1 {
+public class Practice {
     public static void main(String[] args) {
 
         // 문제 1: 홀짝 판별
