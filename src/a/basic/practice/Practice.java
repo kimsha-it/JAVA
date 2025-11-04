@@ -1,4 +1,4 @@
-package a.basic;
+package a.basic.practice;
 
 public class Practice {
     public static void main(String[] args) {
@@ -33,7 +33,7 @@ public class Practice {
         // 4로 나누어떨어지면서 100으로 나누어떨어지지 않거나
         // 400으로 나누어떨어지는 해
         int year = 2024;
-        if( year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if( (year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
             System.out.println(year + "년은 윤년입니다.");
         } else {
             System.out.println( year + "년은 윤년이 아닙니다.");
@@ -45,8 +45,12 @@ public class Practice {
         // 세 변의 길이가 모두 양수
         // 가장 긴 변 < 나머지 두 변의 합
         int a = 3, b = 4, c = 5;
-        if ( a > 0 && b > 0 && c > 0 && c < a + b ){
-            System.out.println("삼각형을 만들 수 있습니다.");
+        if ( a > 0 && b > 0 && c > 0 ){
+            if ((a + b) > c && (b + c) > a && (a + c) > b){
+                System.out.println("삼각형을 만들 수 있습니다.");
+            }
+        } else {
+            System.out.println("삼각형을 만들 수 없습니다.");
         }
 
         // 문제 5: 계절 판별
@@ -89,9 +93,11 @@ public class Practice {
         // 18.5 이상 23 미만: 정상
         // 23 이상 25 미만: 과체중
         // 25 이상: 비만
-        double height = 1.75; //(m)
+        double height = 175.0; //(cm)
         double weight = 70.0; //(kg)
-        double bmi = weight / (height * height);
+
+        double heightMeter = height / 100.0; //(m)
+        double bmi = weight / (heightMeter * heightMeter);
         System.out.println("BMI: " + bmi);
 
         if (bmi < 18.5) {
@@ -127,7 +133,7 @@ public class Practice {
         // 평균이 60점 이상
         // 모든 과목이 40점 이상
         int math = 70, english = 80, science = 45;
-        int avg = math + english + science / 3;
+        double avg = (math + english + science) / 3.0;
         if (avg >= 60 && math >= 40 && english >= 40 && science >= 40) {
             System.out.println("합격");
         } else {
