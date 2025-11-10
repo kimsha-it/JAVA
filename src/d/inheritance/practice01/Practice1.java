@@ -1,4 +1,4 @@
-package d.inheritance.practice;
+package d.inheritance.practice01;
 
 class Person {
     String name;
